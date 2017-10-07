@@ -26,9 +26,12 @@
                     <a class="navbar-brand" href="index.html">Binary admin</a>
                 </div>
                 <div style="color: white;
-padding: 15px 50px 5px 50px;
-float: right;
-font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="#" class="btn btn-danger square-btn-adjust">Logout</a></div>
+                        padding: 15px 50px 5px 50px;
+                        float: right;
+                        font-size: 16px;">
+                    Last access : 30 May 2014 &nbsp;
+                    <a href="#" class="btn btn-danger square-btn-adjust">Logout</a>
+                </div>
             </nav>
             <!-- /. NAV TOP  -->
             <nav class="navbar-default navbar-side" role="navigation">
@@ -59,16 +62,17 @@ font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="#" class="btn btn-dan
 
 
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-3x"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-3x"></i> Tables<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Second Level Link</a>
+                                    <a class="menulinks @((ViewBag.MenuCountry != null) ? "active-menu" : "")" href="@Url.Action("Index", "Country")">Countries</a>
                                 </li>
                                 <li>
-                                    <a href="#">Second Level Link</a>
+                                    <a class="menulinks @((ViewBag.MenuCity != null) ? "active-menu" : "")" href="@Url.Action("Index", "City")">Cities</a>
                                 </li>
                                 <li>
-                                    <a href="#">Second Level Link<span class="fa arrow"></span></a>
+                                    <a class="menulinks @((ViewBag.MenuHotel != null) ? "active-menu" : "")" href="@Url.Action("Index", "Hotel")">Hotels</a>
+                                    @*<a href="#">Second Level Link<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="#">Third Level Link</a>
@@ -80,7 +84,7 @@ font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="#" class="btn btn-dan
                                             <a href="#">Third Level Link</a>
                                         </li>
 
-                                    </ul>
+                                    </ul>*@
 
                                 </li>
                             </ul>
