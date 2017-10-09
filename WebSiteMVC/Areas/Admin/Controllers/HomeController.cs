@@ -8,6 +8,11 @@ namespace WebSiteMVC.Areas.Admin.Controllers
 {
     public class HomeController : Controller
     {
+        public HomeController()
+        {
+            ViewBag.Dashboard = true;
+        }
+
         // GET: Admin/Home
         public ActionResult Index()
         {

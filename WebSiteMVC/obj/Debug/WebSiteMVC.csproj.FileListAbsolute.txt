@@ -276,3 +276,11 @@ C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\DAL.dll.config
 C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\EntityFramework.xml
 C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\EntityFramework.SqlServer.dll
 C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\EntityFramework.SqlServer.xml
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\BLL.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\EntityFramework.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\EntityFramework.SqlServer.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\DAL.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\BLL.pdb
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\EntityFramework.xml
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\EntityFramework.SqlServer.xml
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\DAL.pdb

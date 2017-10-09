@@ -53,6 +53,7 @@
     <Compile Include="Concrete\CityRepository.cs" />
     <Compile Include="Concrete\CountryRepository.cs" />
     <Compile Include="Concrete\HotelRepository.cs" />
+    <Compile Include="DBInitializer.cs" />
     <Compile Include="EFContext.cs" />
     <Compile Include="Entity\City.cs" />
     <Compile Include="Entity\Country.cs" />

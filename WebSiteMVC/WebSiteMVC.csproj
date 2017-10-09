@@ -163,6 +163,7 @@
     <Content Include="Areas\Admin\Content\bootstrap.css" />
     <Content Include="Areas\Admin\Content\custom.css" />
     <Content Include="Areas\Admin\Content\font-awesome.css" />
+    <Content Include="Areas\Admin\Content\styles.css" />
     <Content Include="Areas\Admin\images\1.png" />
     <Content Include="Areas\Admin\images\2.png" />
     <Content Include="Areas\Admin\images\3.png" />

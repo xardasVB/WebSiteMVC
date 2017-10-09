@@ -11,8 +11,14 @@ namespace DAL
     {
         public EFContext() : base("ConnectionHotel")
         {
-            
+            Database.SetInitializer<EFContext>(null);
         }
+
+        public EFContext(string connString) : base(connString)
+        {
+            Database.SetInitializer<EFContext>(new DBInitializer());
+        }
+
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Hotel> Hotels { get; set; }

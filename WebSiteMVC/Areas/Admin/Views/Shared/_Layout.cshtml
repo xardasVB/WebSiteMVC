@@ -7,10 +7,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Admin Panel</title>
+    <title>Admin @ViewBag.Title</title>
+
     <link href="~/Areas/Admin/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Areas/Admin/Content/custom.css" rel="stylesheet" />
     <link href="~/Areas/Admin/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/styles.css" rel="stylesheet" />
 </head>
 <body>
     <div>
@@ -42,7 +44,35 @@
                         </li>
 
                         <li>
-                            <a class="active-menu" href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                            <a class="menulinks @((ViewBag.Dashboard == true) ? "active-menu" : "")" href="@Url.Action("Index", "Home")"><i class="fa fa-dashboard fa-3x"></i>Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="@((ViewBag.Dashboard != true) ? "active-menu" : "")" href="#"><i class="fa fa-sitemap fa-3x"></i> Tables<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a class="menulinks @((ViewBag.MenuCountry != null) ? "active-menu-inner" : "")" href="@Url.Action("Index", "Country")">Countries</a>
+                                </li>
+                                <li>
+                                    <a class="menulinks @((ViewBag.MenuCity != null) ? "active-menu-inner" : "")" href="@Url.Action("Index", "City")">Cities</a>
+                                </li>
+                                <li>
+                                    <a class="menulinks @((ViewBag.MenuHotel != null) ? "active-menu-inner" : "")" href="@Url.Action("Index", "Hotel")">Hotels</a>
+                                    @*<a href="#">Second Level Link<span class="fa arrow"></span></a>
+                                        <ul class="nav nav-third-level">
+                                            <li>
+                                                <a href="#">Third Level Link</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Third Level Link</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Third Level Link</a>
+                                            </li>
+
+                                        </ul>*@
+
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
@@ -58,36 +88,6 @@
                         </li>
                         <li>
                             <a href="form.html"><i class="fa fa-edit fa-3x"></i> Forms </a>
-                        </li>
-
-
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-3x"></i> Tables<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a class="menulinks @((ViewBag.MenuCountry != null) ? "active-menu" : "")" href="@Url.Action("Index", "Country")">Countries</a>
-                                </li>
-                                <li>
-                                    <a class="menulinks @((ViewBag.MenuCity != null) ? "active-menu" : "")" href="@Url.Action("Index", "City")">Cities</a>
-                                </li>
-                                <li>
-                                    <a class="menulinks @((ViewBag.MenuHotel != null) ? "active-menu" : "")" href="@Url.Action("Index", "Hotel")">Hotels</a>
-                                    @*<a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Link</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Link</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Link</a>
-                                        </li>
-
-                                    </ul>*@
-
-                                </li>
-                            </ul>
                         </li>
                         <li>
                             <a href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
