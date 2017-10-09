@@ -11,7 +11,7 @@ namespace DAL.Concrete
 {
     public class HotelRepository : IHotelRepository
     {
-        EFContext _ctx = new EFContext();
+        private readonly EFContext _ctx = new EFContext();
 
         public Hotel AddHotel(Hotel hotel)
         {
@@ -25,6 +25,12 @@ namespace DAL.Concrete
             return _ctx.Hotels
                 .Include(c => c.City)
                 .ToList();
+        }
+
+        public void Dispose()
+        {
+            if (_ctx != null)
+                _ctx.Dispose();
         }
 
         public Hotel RemoveHotel(int id)

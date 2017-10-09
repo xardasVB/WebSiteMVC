@@ -11,7 +11,7 @@ namespace DAL.Concrete
 {
     public class CountryRepository : ICountryRepository
     {
-        EFContext _ctx = new EFContext();
+        private readonly EFContext _ctx = new EFContext();
 
         public Country AddCountry(Country country)
         {
@@ -25,6 +25,12 @@ namespace DAL.Concrete
             return _ctx.Countries
                 .Include(c => c.Cities)
                 .ToList();
+        }
+
+        public void Dispose()
+        {
+            if (_ctx != null)
+                _ctx.Dispose();
         }
 
         public Country RemoveCountry(int id)
