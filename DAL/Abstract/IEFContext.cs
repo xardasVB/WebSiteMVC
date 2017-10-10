@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Abstract
 {
-    interface IEFContext : IDisposable
+    public interface IEFContext : IDisposable
     {
         IDbSet<TEntity> Set<TEntity>() where TEntity : class;
 

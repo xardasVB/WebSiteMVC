@@ -19,6 +19,12 @@ namespace WebSiteMVC.Areas.Admin.Controllers
             ViewBag.MenuCountry = true;
         }
 
+        public CountryController(ICountryProvider countryProvider)
+        {
+            provider = countryProvider;
+            ViewBag.MenuCountry = true;
+        }
+
         // GET: Country
         public ActionResult Index()
         {
