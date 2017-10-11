@@ -99,8 +99,10 @@
             </nav>
             <!-- /. NAV SIDE  -->
             <div id="page-wrapper">
-                <div id="page-inner">
-                    @RenderBody()
+                <div class="row" id="page-inner">
+                    <div class="menulinks @((ViewBag.Dashboard != true) ? "col-md-6" : "")">
+                        @RenderBody()
+                    </div>
                 </div>
                 <!-- /. PAGE INNER  -->
             </div>

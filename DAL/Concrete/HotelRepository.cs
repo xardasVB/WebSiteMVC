@@ -11,18 +11,23 @@ namespace DAL.Concrete
 {
     public class HotelRepository : IHotelRepository
     {
-        private readonly EFContext _ctx = new EFContext();
+        private readonly IEFContext _ctx;
+
+        public HotelRepository(IEFContext ctx)
+        {
+            _ctx = ctx;
+        }
 
         public Hotel AddHotel(Hotel hotel)
         {
-            _ctx.Hotels.Add(hotel);
+            _ctx.Set<Hotel>().Add(hotel);
             _ctx.SaveChanges();
             return hotel;
         }
 
         public List<Hotel> GetHotels()
         {
-            return _ctx.Hotels
+            return _ctx.Set<Hotel>()
                 .Include(c => c.City)
                 .ToList();
         }
@@ -35,17 +40,18 @@ namespace DAL.Concrete
 
         public Hotel RemoveHotel(int id)
         {
-            Hotel hotel = _ctx.Hotels.Include(h => h.City).FirstOrDefault(h => h.Id == id);
-            _ctx.Hotels.Remove(hotel);
+            Hotel hotel = _ctx.Set<Hotel>().Include(h => h.City).FirstOrDefault(h => h.Id == id);
+            _ctx.Set<Hotel>().Remove(hotel);
             _ctx.SaveChanges();
             return hotel;
         }
 
         public Hotel UpdateHotel(Hotel updatedHotel)
         {
-            Hotel oldHotel = _ctx.Hotels.FirstOrDefault(c => c.Id == updatedHotel.Id);
+            Hotel oldHotel = _ctx.Set<Hotel>().FirstOrDefault(c => c.Id == updatedHotel.Id);
             oldHotel.Priority = updatedHotel.Priority;
             oldHotel.Name = updatedHotel.Name;
+            oldHotel.CityId = updatedHotel.CityId;
             _ctx.SaveChanges();
             return updatedHotel;
         }

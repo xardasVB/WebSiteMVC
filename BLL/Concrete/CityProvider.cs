@@ -13,7 +13,12 @@ namespace BLL.Concrete
 {
     public class CityProvider : ICityProvider
     {
-        ICityRepository repository = new CityRepository();
+        ICityRepository repository;
+
+        public CityProvider(ICityRepository repository)
+        {
+            this.repository = repository;
+        }
 
         public CityCreateViewModel CreateCity(CityCreateViewModel city)
         {
@@ -61,7 +66,8 @@ namespace BLL.Concrete
                     Name = c.Name,
                     Priority = c.Priority,
                     DateCreate = c.DateCreate,
-                    Country = c.Country.Name
+                    Country = c.Country.Name,
+                    CountryId = c.CountryId
                 })
                 .ToList();
         }

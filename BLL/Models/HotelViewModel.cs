@@ -19,5 +19,7 @@ namespace BLL.Models
         public int Priority { get; set; }
         [Display(Name = "City")]
         public string City { get; set; }
+        [Display(Name = "City Id")]
+        public int CityId { get; set; }
     }
 }

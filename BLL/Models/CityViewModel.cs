@@ -19,5 +19,7 @@ namespace BLL.Models
         public int Priority { get; set; }
         [Display(Name = "Country")]
         public string Country { get; set; }
+        [Display(Name = "Country Id")]
+        public int CountryId { get; set; }
     }
 }

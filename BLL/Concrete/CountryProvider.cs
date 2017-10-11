@@ -13,7 +13,12 @@ namespace BLL.Concrete
 {
     public class CountryProvider : ICountryProvider
     {
-        ICountryRepository repository = new CountryRepository();
+        ICountryRepository repository;
+
+        public CountryProvider(ICountryRepository repository)
+        {
+            this.repository = repository;
+        }
 
         public CountryCreateViewModel CreateCountry(CountryCreateViewModel country)
         {

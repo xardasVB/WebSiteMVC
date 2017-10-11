@@ -11,18 +11,23 @@ namespace DAL.Concrete
 {
     public class CountryRepository : ICountryRepository
     {
-        private readonly EFContext _ctx = new EFContext();
+        private readonly IEFContext _ctx;
+
+        public CountryRepository(IEFContext ctx)
+        {
+            _ctx = ctx;
+        }
 
         public Country AddCountry(Country country)
         {
-            _ctx.Countries.Add(country);
+            _ctx.Set<Country>().Add(country);
             _ctx.SaveChanges();
             return country;
         }
 
         public List<Country> GetCountries()
         {
-            return _ctx.Countries
+            return _ctx.Set<Country>()
                 .Include(c => c.Cities)
                 .ToList();
         }
@@ -35,15 +40,15 @@ namespace DAL.Concrete
 
         public Country RemoveCountry(int id)
         {
-            Country country = _ctx.Countries.FirstOrDefault(h => h.Id == id);
-            _ctx.Countries.Remove(country);
+            Country country = _ctx.Set<Country>().FirstOrDefault(h => h.Id == id);
+            _ctx.Set<Country>().Remove(country);
             _ctx.SaveChanges();
             return country;
         }
 
         public Country UpdateCountry(Country updatedCountry)
         {
-            Country oldCountry = _ctx.Countries.FirstOrDefault(c => c.Id == updatedCountry.Id);
+            Country oldCountry = _ctx.Set<Country>().FirstOrDefault(c => c.Id == updatedCountry.Id);
             oldCountry.Priority = updatedCountry.Priority;
             oldCountry.Name = updatedCountry.Name;
             _ctx.SaveChanges();

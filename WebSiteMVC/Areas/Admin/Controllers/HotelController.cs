@@ -11,15 +11,22 @@ namespace WebSiteMVC.Areas.Admin.Controllers
 {
     public class HotelController : Controller
     {
-        IHotelProvider provider;
-        ICityProvider cityProvider;
+        private readonly IHotelProvider provider;
+        private readonly ICityProvider cityProvider;
 
-        public HotelController()
+        public HotelController(IHotelProvider provider, ICityProvider cityProvider)
         {
-            provider = new HotelProvider();
-            cityProvider = new CityProvider();
+            this.provider = provider;
+            this.cityProvider = cityProvider;
             ViewBag.MenuHotel = true;
         }
+
+        //public HotelController()
+        //{
+        //    provider = new HotelProvider();
+        //    cityProvider = new CityProvider();
+        //    ViewBag.MenuHotel = true;
+        //}
 
         // GET: Hotel
         public ActionResult Index()
@@ -35,7 +42,7 @@ namespace WebSiteMVC.Areas.Admin.Controllers
         public ActionResult Create()
         {
             HotelCreateViewModel model = new HotelCreateViewModel();
-            InitializeCountries(ref model);
+            InitializeCities(ref model);
             return View(model);
         }
 
@@ -53,7 +60,7 @@ namespace WebSiteMVC.Areas.Admin.Controllers
             if (!ModelState.IsValid)
             {
                 ModelState.AddModelError("", "Fields are incorrect");
-                InitializeCountries(ref model);
+                InitializeCities(ref model);
                 return View(model);
             }
             provider.CreateHotel(model);
@@ -68,13 +75,14 @@ namespace WebSiteMVC.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
-            var Hotel = provider.GetHotelById(id);
+            var hotel = provider.GetHotelById(id);
             var model = new HotelEditViewModel
             {
-                Name = Hotel.Name,
-                Priority = Hotel.Priority
+                Name = hotel.Name,
+                Priority = hotel.Priority,
+                CityId = hotel.CityId
             };
-            InitializeCountries(ref model);
+            InitializeCities(ref model);
             return View(model);
         }
 
@@ -93,7 +101,7 @@ namespace WebSiteMVC.Areas.Admin.Controllers
             if (!ModelState.IsValid)
             {
                 ModelState.AddModelError("", "Fields are incorrect");
-                InitializeCountries(ref model);
+                InitializeCities(ref model);
                 return View(model);
             }
             provider.EditHotel(model, id);
@@ -105,18 +113,18 @@ namespace WebSiteMVC.Areas.Admin.Controllers
             return View(provider.GetHotelById(id));
         }
 
-        private void InitializeCountries(ref HotelCreateViewModel model)
+        private void InitializeCities(ref HotelCreateViewModel model)
         {
             model.Cities = cityProvider
             .GetCities()
             .Select(c => new SelectItemViewModel
             {
-                Id = c.Id,
+                Id = c.CountryId,
                 Name = c.Name
             }).ToList();
         }
 
-        private void InitializeCountries(ref HotelEditViewModel model)
+        private void InitializeCities(ref HotelEditViewModel model)
         {
             model.Cities = cityProvider
             .GetCities()

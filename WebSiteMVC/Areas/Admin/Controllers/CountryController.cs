@@ -11,19 +11,19 @@ namespace WebSiteMVC.Areas.Admin.Controllers
 {
     public class CountryController : Controller
     {
-        ICountryProvider provider;
-
-        public CountryController()
-        {
-            provider = new CountryProvider();
-            ViewBag.MenuCountry = true;
-        }
-
+        private readonly ICountryProvider provider;
+        
         public CountryController(ICountryProvider countryProvider)
         {
             provider = countryProvider;
             ViewBag.MenuCountry = true;
         }
+
+        //public CountryController()
+        //{
+        //    provider = new CountryProvider();
+        //    ViewBag.MenuCountry = true;
+        //}
 
         // GET: Country
         public ActionResult Index()

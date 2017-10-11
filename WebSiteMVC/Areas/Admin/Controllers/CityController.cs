@@ -11,15 +11,22 @@ namespace WebSiteMVC.Areas.Admin.Controllers
 {
     public class CityController : Controller
     {
-        ICityProvider provider;
-        ICountryProvider countryProvider;
+        private readonly ICityProvider provider;
+        private readonly ICountryProvider countryProvider;
 
-        public CityController()
+        public CityController(ICityProvider provider, ICountryProvider countryProvider)
         {
-            provider = new CityProvider();
-            countryProvider = new CountryProvider();
+            this.provider = provider;
+            this.countryProvider = countryProvider;
             ViewBag.MenuCity = true;
         }
+
+        //public CityController()
+        //{
+        //    provider = new CityProvider();
+        //    countryProvider = new CountryProvider();
+        //    ViewBag.MenuCity = true;
+        //}
 
         // GET: City
         public ActionResult Index()
@@ -72,7 +79,8 @@ namespace WebSiteMVC.Areas.Admin.Controllers
             var model = new CityEditViewModel
             {
                 Name = city.Name,
-                Priority = city.Priority
+                Priority = city.Priority,
+                CountryId = city.CountryId
             };
             InitializeCountries(ref model);
             return View(model);

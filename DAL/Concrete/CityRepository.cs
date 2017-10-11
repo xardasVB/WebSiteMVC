@@ -11,18 +11,23 @@ namespace DAL.Concrete
 {
     public class CityRepository : ICityRepository
     {
-        private readonly EFContext _ctx = new EFContext();
+        private readonly IEFContext _ctx;
+
+        public CityRepository(IEFContext ctx)
+        {
+            _ctx = ctx;
+        }
 
         public City AddCity(City city)
         {
-            _ctx.Cities.Add(city);
+            _ctx.Set<City>().Add(city);
             _ctx.SaveChanges();
             return city;
         }
 
         public List<City> GetCities()
         {
-            return _ctx.Cities
+            return _ctx.Set<City>()
                 .Include(c => c.Country)
                 .Include(c => c.Hotels)
                 .ToList();
@@ -36,15 +41,15 @@ namespace DAL.Concrete
 
         public City RemoveCity(int id)
         {
-            City city = _ctx.Cities.Include(c => c.Country).FirstOrDefault(h => h.Id == id);
-            _ctx.Cities.Remove(city);
+            City city = _ctx.Set<City>().Include(c => c.Country).FirstOrDefault(h => h.Id == id);
+            _ctx.Set<City>().Remove(city);
             _ctx.SaveChanges();
             return city;
         }
 
         public City UpdateCity(City updatedCity)
         {
-            City oldCity = _ctx.Cities.FirstOrDefault(c => c.Id == updatedCity.Id);
+            City oldCity = _ctx.Set<City>().FirstOrDefault(c => c.Id == updatedCity.Id);
             oldCity.CountryId = updatedCity.CountryId;
             oldCity.Priority = updatedCity.Priority;
             oldCity.Name = updatedCity.Name;

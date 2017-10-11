@@ -13,7 +13,12 @@ namespace BLL.Concrete
 {
     public class HotelProvider : IHotelProvider
     {
-        IHotelRepository repository = new HotelRepository();
+        IHotelRepository repository;
+
+        public HotelProvider(IHotelRepository repository)
+        {
+            this.repository = repository;
+        }
 
         public HotelCreateViewModel CreateHotel(HotelCreateViewModel hotel)
         {
@@ -61,7 +66,8 @@ namespace BLL.Concrete
                     Name = h.Name,
                     Priority = h.Priority,
                     DateCreate = h.DateCreate,
-                    City = h.City.Name
+                    City = h.City.Name,
+                    CityId = h.CityId
                 })
                 .ToList();
         }

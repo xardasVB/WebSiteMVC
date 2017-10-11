@@ -59,21 +59,9 @@
     <Compile Include="Entity\City.cs" />
     <Compile Include="Entity\Country.cs" />
     <Compile Include="Entity\Hotel.cs" />
-    <Compile Include="Migrations\201710021645335_Create Table Countries.cs" />
-    <Compile Include="Migrations\201710021645335_Create Table Countries.Designer.cs">
-      <DependentUpon>201710021645335_Create Table Countries.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710031720187_Create Cities Table.cs" />
-    <Compile Include="Migrations\201710031720187_Create Cities Table.Designer.cs">
-      <DependentUpon>201710031720187_Create Cities Table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710071343491_Fixed City Hotel Connection.cs" />
-    <Compile Include="Migrations\201710071343491_Fixed City Hotel Connection.Designer.cs">
-      <DependentUpon>201710071343491_Fixed City Hotel Connection.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710071648357_Create Hotels Table.cs" />
-    <Compile Include="Migrations\201710071648357_Create Hotels Table.Designer.cs">
-      <DependentUpon>201710071648357_Create Hotels Table.cs</DependentUpon>
+    <Compile Include="Migrations\201710111725195_Create Hotel DB.cs" />
+    <Compile Include="Migrations\201710111725195_Create Hotel DB.Designer.cs">
+      <DependentUpon>201710111725195_Create Hotel DB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,19 +72,9 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710021645335_Create Table Countries.resx">
-      <DependentUpon>201710021645335_Create Table Countries.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710031720187_Create Cities Table.resx">
-      <DependentUpon>201710031720187_Create Cities Table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710071343491_Fixed City Hotel Connection.resx">
-      <DependentUpon>201710071343491_Fixed City Hotel Connection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710071648357_Create Hotels Table.resx">
-      <DependentUpon>201710071648357_Create Hotels Table.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710111725195_Create Hotel DB.resx">
+      <DependentUpon>201710111725195_Create Hotel DB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

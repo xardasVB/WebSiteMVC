@@ -26,8 +26,16 @@ namespace BLL.Concrete
                 .As<IEFContext>().InstancePerRequest();
             builder.RegisterType<CountryRepository>()
                 .As<ICountryRepository>().InstancePerRequest();
+            builder.RegisterType<CityRepository>()
+                .As<ICityRepository>().InstancePerRequest();
+            builder.RegisterType<HotelRepository>()
+                .As<IHotelRepository>().InstancePerRequest();
             builder.RegisterType<CountryProvider>()
                 .As<ICountryProvider>().InstancePerRequest();
+            builder.RegisterType<CityProvider>()
+                .As<ICityProvider>().InstancePerRequest();
+            builder.RegisterType<HotelProvider>()
+                .As<IHotelProvider>().InstancePerRequest();
             base.Load(builder);
         }
     }

@@ -10,7 +10,7 @@ namespace DAL
 {
     public class EFContext : DbContext, IEFContext
     {
-        public EFContext() : base("ConnectionHotel")
+        public EFContext() : base("HotelDB")
         {
             Database.SetInitializer<EFContext>(null);
         }
