@@ -166,6 +166,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\PagingHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -225,6 +226,7 @@
     <Content Include="Areas\Admin\Views\Hotel\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Hotel\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Hotel\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Country\_Countries.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

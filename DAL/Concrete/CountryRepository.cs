@@ -54,5 +54,10 @@ namespace DAL.Concrete
             _ctx.SaveChanges();
             return updatedCountry;
         }
+
+        public int TotalCountries()
+        {
+            return this.GetCountries().Count;
+        }
     }
 }

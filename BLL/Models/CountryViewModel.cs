@@ -18,4 +18,11 @@ namespace BLL.Models
         [Display(Name = "Priority")]
         public int Priority { get; set; }
     }
+
+    public class CountryItemViewModel
+    {
+        public List<CountryViewModel> Countries { get; set; }
+        public int TotalPages { get; set; }
+        public int CurrentPage { get; set; }
+    }
 }

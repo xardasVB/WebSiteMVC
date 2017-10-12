@@ -9,6 +9,7 @@ namespace BLL.Abstract
 {
     public interface IHotelProvider
     {
+        List<HotelViewModel> GetHotelsByPage(int page);
         List<HotelViewModel> GetHotels();
         HotelViewModel GetHotelById(int id);
         HotelViewModel DeleteHotel(int id);

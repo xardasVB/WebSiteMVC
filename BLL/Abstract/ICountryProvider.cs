@@ -9,6 +9,7 @@ namespace BLL.Abstract
 {
     public interface ICountryProvider
     {
+        CountryItemViewModel GetCountriesByPage(int page);
         List<CountryViewModel> GetCountries();
         CountryViewModel GetCountryById(int id);
         CountryViewModel DeleteCountry(int id);

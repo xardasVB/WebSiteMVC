@@ -13,5 +13,6 @@ namespace DAL.Abstract
         Country RemoveCountry(int id);
         Country UpdateCountry(Country updatedCountry);
         List<Country> GetCountries();
+        int TotalCountries();
     }
 }

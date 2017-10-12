@@ -56,6 +56,27 @@ namespace BLL.Concrete
             return hotel;
         }
 
+        public List<HotelViewModel> GetHotelsByPage(int page)
+        {
+            int pageSize = 10;
+            int pageNo = page - 1;
+            return repository
+                .GetHotels()
+                .OrderBy(c => c.Id)
+                .Skip(pageNo * pageSize)
+                .Take(pageSize)
+                .Select(h => new HotelViewModel
+                {
+                    Id = h.Id,
+                    Name = h.Name,
+                    Priority = h.Priority,
+                    DateCreate = h.DateCreate,
+                    City = h.City.Name,
+                    CityId = h.CityId
+                })
+                .ToList();
+        }
+
         public List<HotelViewModel> GetHotels()
         {
             return repository

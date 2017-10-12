@@ -26,13 +26,9 @@ namespace WebSiteMVC.Areas.Admin.Controllers
         //}
 
         // GET: Country
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
-            List<CountryViewModel> model;
-            model = provider
-                .GetCountries()
-                .OrderByDescending(c => c.Priority)
-                .ToList();
+            var model = provider.GetCountriesByPage(page);
             return View(model);
         }
 

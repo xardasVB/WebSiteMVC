@@ -2,6 +2,11 @@
 
 @{
     ViewBag.Title = "Cities";
+
+    string links = Html.PageLinks(1, 2, x => Url.Action("Index", "City", new
+    {
+        page = x
+    }));
 }
 
 <h2>Cities</h2>
@@ -9,6 +14,9 @@
 <p>
     @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-default" })
 </p>
+
+@Html.Raw(links)
+
 <table class="table table-hover table-striped">
     <tr>
         <th>
@@ -49,3 +57,5 @@
 }
 
 </table>
+
+@Html.Raw(links)
