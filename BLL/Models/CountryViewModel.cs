@@ -19,12 +19,20 @@ namespace BLL.Models
         public int Priority { get; set; }
     }
 
+    public class SearchCountryViewModel
+    {
+        public string Name { get; set; }
+        public string Priority { get; set; }
+    }
+
     public class CountryItemViewModel
     {
         public List<CountryViewModel> Countries { get; set; }
         public int TotalPages { get; set; }
+        [Display(Name = "Items per page")]
         [Range(1, short.MaxValue)]
         public int Pages { get; set; }
         public int CurrentPage { get; set; }
+        public SearchCountryViewModel Search { get; set; }
     }
 }

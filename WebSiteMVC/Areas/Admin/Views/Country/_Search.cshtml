@@ -1,0 +1,14 @@
+﻿@model BLL.Models.SearchCountryViewModel
+
+@using (Html.BeginForm())
+{
+    <div class="form-group row">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "input-sm" } })
+
+        @Html.LabelFor(model => model.Priority, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(model => model.Priority, new { htmlAttributes = new { @class = "input-sm" } })
+
+        <input type="submit" value="Search" class="btn btn-default" />
+    </div>
+}

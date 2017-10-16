@@ -52,6 +52,7 @@
     <Compile Include="Concrete\CountryProvider.cs" />
     <Compile Include="Concrete\DataModule.cs" />
     <Compile Include="Concrete\HotelProvider.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\CityCreateViewModel.cs" />
     <Compile Include="Models\CityEditViewModel.cs" />
     <Compile Include="Models\CityViewModel.cs" />

@@ -162,6 +162,7 @@
     <Compile Include="Areas\Admin\Controllers\CountryController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\HotelController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -230,6 +231,8 @@
     <Content Include="Areas\Admin\Views\Country\_Countries.cshtml" />
     <Content Include="Areas\Admin\Views\City\_Cities.cshtml" />
     <Content Include="Areas\Admin\Views\Hotel\_Hotels.cshtml" />
+    <Content Include="Areas\Admin\Views\Country\_Search.cshtml" />
+    <Content Include="Areas\Admin\Views\Country\_ItemsPerPage.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -255,6 +258,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

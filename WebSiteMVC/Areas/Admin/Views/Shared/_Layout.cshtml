@@ -111,6 +111,10 @@
 
     </div>
 
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
     <script src="~/Areas/Admin/Scripts/jquery-1.10.2.js"></script>
     <script src="~/Areas/Admin/Scripts/bootstrap.min.js"></script>
     <script src="~/Areas/Admin/Scripts/jquery.metisMenu.js"></script>

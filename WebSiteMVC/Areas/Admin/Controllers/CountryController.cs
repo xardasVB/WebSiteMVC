@@ -26,9 +26,9 @@ namespace WebSiteMVC.Areas.Admin.Controllers
         //}
 
         // GET: Country
-        public ActionResult Index(int page = 1, int pages = 10)
+        public ActionResult Index(int page = 1, int pages = 10, SearchCountryViewModel search = null)
         {
-            return View(provider.GetCountriesByPage(page, pages));
+            return View(provider.GetCountriesByPage(page, pages, search));
         }
 
         public ActionResult Create()

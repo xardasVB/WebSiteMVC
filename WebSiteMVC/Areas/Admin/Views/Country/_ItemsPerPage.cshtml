@@ -1,0 +1,11 @@
+﻿@model BLL.Models.CountryItemViewModel
+
+@using (Html.BeginForm())
+{
+    <div class="form-group row">
+        @Html.LabelFor(Model => Model.Pages, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(Model => Model.Pages, new { htmlAttributes = new { @class = "input-sm" } })
+        @Html.ValidationMessageFor(model => model.Pages, "", new { @class = "text-danger" })
+        <input type="submit" value="Save" class="btn btn-default" />
+    </div>
+}
