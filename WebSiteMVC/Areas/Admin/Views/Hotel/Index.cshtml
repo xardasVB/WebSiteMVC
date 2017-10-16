@@ -1,61 +1,26 @@
-﻿@model IEnumerable<BLL.Models.HotelViewModel>
+﻿@model BLL.Models.HotelItemViewModel
 
 @{
     ViewBag.Title = "Hotels";
 
-    string links = Html.PageLinks(1, 2, x => Url.Action("Index", "Hotel", new
-    {
-        page = x
-    }));
+    string links = Html.PageLinks(Model.CurrentPage, Model.TotalPages, x => Url.Action("Index", "Hotel", new { page = x, pages = Model.Pages }));
 }
 
 <h2>Hotels</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-default" })
-</p>
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.Pages, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(Model => Model.Pages, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Pages, "", new { @class = "text-danger" })
+    </div>
+    <input type="submit" value="Save" class="btn btn-default" />
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-info" })
+}
 
 @Html.Raw(links)
 
-<table class="table table-hover table-striped">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateCreate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Priority)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.City)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateCreate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Priority)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.City)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }, new { @class = "btn btn-success" }) 
-            @Html.ActionLink("Details", "Details", new { id=item.Id }, new { @class = "btn btn-default" }) 
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new { @class = "btn btn-danger" })
-        </td>
-    </tr>
-}
-
-</table>
+@Html.Partial("_Hotels", Model.Hotels)
 
 @Html.Raw(links)

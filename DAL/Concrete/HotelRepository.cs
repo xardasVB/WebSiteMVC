@@ -55,5 +55,10 @@ namespace DAL.Concrete
             _ctx.SaveChanges();
             return updatedHotel;
         }
+
+        public int TotalHotels()
+        {
+            return this.GetHotels().Count;
+        }
     }
 }

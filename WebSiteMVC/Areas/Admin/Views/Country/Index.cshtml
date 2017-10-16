@@ -3,17 +3,21 @@
 @{
     ViewBag.Title = "Countries";
 
-    string links = Html.PageLinks(Model.CurrentPage, Model.TotalPages, x => Url.Action("Index", "Country", new
-    {
-        page = x
-    }));
+    string links = Html.PageLinks(Model.CurrentPage, Model.TotalPages, x => Url.Action("Index", "Country", new { page = x, pages = Model.Pages }));
 }
- 
+
 <h2>Countries</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-default" })
-</p>
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.Pages, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(Model => Model.Pages, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Pages, "", new { @class = "text-danger" })
+    </div>
+    <input type="submit" value="Save" class="btn btn-default" />
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-info" })
+}
 
 @Html.Raw(links)
 

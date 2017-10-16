@@ -29,14 +29,9 @@ namespace WebSiteMVC.Areas.Admin.Controllers
         //}
 
         // GET: City
-        public ActionResult Index(int page = 1)
+        public ActionResult Index(int page = 1, int pages = 10)
         {
-            List<CityViewModel> model;
-            model = provider
-                .GetCitiesByPage(page)
-                .OrderByDescending(c => c.Priority)
-                .ToList();
-            return View(model);
+            return View(provider.GetCitiesByPage(page, pages));
         }
 
         public ActionResult Create()

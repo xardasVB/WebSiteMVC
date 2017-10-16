@@ -56,25 +56,28 @@ namespace BLL.Concrete
             return hotel;
         }
 
-        public List<HotelViewModel> GetHotelsByPage(int page)
+        public HotelItemViewModel GetHotelsByPage(int page, int pages)
         {
-            int pageSize = 10;
             int pageNo = page - 1;
-            return repository
+            HotelItemViewModel model = new HotelItemViewModel();
+            model.Pages = pages;
+            model.Hotels = repository
                 .GetHotels()
-                .OrderBy(c => c.Id)
-                .Skip(pageNo * pageSize)
-                .Take(pageSize)
-                .Select(h => new HotelViewModel
+                .OrderByDescending(c => c.Priority)
+                .Skip(pageNo * pages)
+                .Take(pages)
+                .Select(c => new HotelViewModel
                 {
-                    Id = h.Id,
-                    Name = h.Name,
-                    Priority = h.Priority,
-                    DateCreate = h.DateCreate,
-                    City = h.City.Name,
-                    CityId = h.CityId
-                })
-                .ToList();
+                    Id = c.Id,
+                    Name = c.Name,
+                    Priority = c.Priority,
+                    DateCreate = c.DateCreate,
+                    City = c.City.Name
+                }).ToList();
+            model.TotalPages = (int)Math.Ceiling((double)repository.TotalHotels() / pages);
+            model.CurrentPage = page;
+
+            return model;
         }
 
         public List<HotelViewModel> GetHotels()

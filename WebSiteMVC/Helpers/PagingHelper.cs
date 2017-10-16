@@ -13,17 +13,35 @@ namespace WebSiteMVC.Helpers
             int currentPage, int totalPages, Func<int, string> pageUrl)
         {
             StringBuilder result = new StringBuilder();
-            for (int i = 1; i <= totalPages; i++)
+            if (totalPages > 13)
             {
-                TagBuilder tagLi = new TagBuilder("li");
-                TagBuilder tag = new TagBuilder("a");
-                tag.MergeAttribute("href", pageUrl(i));
-                tag.InnerHtml = i.ToString();
-                if (i == currentPage)
-                    tagLi.AddCssClass("active");
-                tagLi.InnerHtml = tag.ToString();
-                result.AppendLine(tagLi.ToString());
+                for (int i = 1; i <= (currentPage <= 8 ? 11 : 3); i++)
+                    result.AppendLine(CreatePageLink(i, currentPage, pageUrl));
+
+                if (currentPage > 8 && currentPage < totalPages - 5)
+                {
+                    result.AppendLine(CreateTripleDot());
+                    for (int i = currentPage - 3; i <= currentPage + 3; i++)
+                        result.AppendLine(CreatePageLink(i, currentPage, pageUrl));
+                }
+                else if (currentPage >= totalPages - 5)
+                {
+                    result.AppendLine(CreateTripleDot());
+                    for (int i = totalPages - 8; i <= totalPages; i++)
+                        result.AppendLine(CreatePageLink(i, currentPage, pageUrl));
+                }
+
+                if (currentPage < totalPages - 5)
+                {
+                    result.AppendLine(CreateTripleDot());
+                    result.AppendLine(CreatePageLink(totalPages, currentPage, pageUrl));
+                }
             }
+            else
+                for (int i = 1; i <= totalPages; i++)
+                    result.AppendLine(CreatePageLink(i, currentPage, pageUrl));
+
+
             TagBuilder tagDiv = new TagBuilder("div");
             TagBuilder tagUl = new TagBuilder("ul");
 
@@ -32,6 +50,25 @@ namespace WebSiteMVC.Helpers
             tagDiv.InnerHtml = tagUl.ToString();
 
             return tagDiv.ToString();
+        }
+
+        public static string CreatePageLink(int pageNumber, int currentPage, Func<int, string> pageUrl)
+        {
+            TagBuilder tagLi = new TagBuilder("li");
+            TagBuilder tag = new TagBuilder("a");
+            tag.MergeAttribute("href", pageUrl(pageNumber));
+            tag.InnerHtml = pageNumber.ToString();
+            if (pageNumber == currentPage)
+                tagLi.AddCssClass("active");
+            tagLi.InnerHtml = tag.ToString();
+            return tagLi.ToString();
+        }
+
+        public static string CreateTripleDot()
+        {
+            TagBuilder tagLi = new TagBuilder("li");
+            tagLi.InnerHtml = "<span>...</span>";
+            return tagLi.ToString();
         }
     }
 }

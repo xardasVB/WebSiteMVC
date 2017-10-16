@@ -29,14 +29,9 @@ namespace WebSiteMVC.Areas.Admin.Controllers
         //}
 
         // GET: Hotel
-        public ActionResult Index(int page = 1)
+        public ActionResult Index(int page = 1, int pages = 10)
         {
-            List<HotelViewModel> model;
-            model = provider
-                .GetHotelsByPage(page)
-                .OrderByDescending(c => c.Priority)
-                .ToList();
-            return View(model);
+            return View(provider.GetHotelsByPage(page, pages));
         }
 
         public ActionResult Create()

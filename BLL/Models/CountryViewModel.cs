@@ -23,6 +23,8 @@ namespace BLL.Models
     {
         public List<CountryViewModel> Countries { get; set; }
         public int TotalPages { get; set; }
+        [Range(1, short.MaxValue)]
+        public int Pages { get; set; }
         public int CurrentPage { get; set; }
     }
 }

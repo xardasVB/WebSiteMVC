@@ -22,4 +22,13 @@ namespace BLL.Models
         [Display(Name = "City Id")]
         public int CityId { get; set; }
     }
+
+    public class HotelItemViewModel
+    {
+        public List<HotelViewModel> Hotels { get; set; }
+        public int TotalPages { get; set; }
+        [Range(1, short.MaxValue)]
+        public int Pages { get; set; }
+        public int CurrentPage { get; set; }
+    }
 }

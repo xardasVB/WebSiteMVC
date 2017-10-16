@@ -16,39 +16,41 @@ namespace DALTest
     {
         static void Main(string[] args)
         {
-            ICountryRepository cor = new CountryRepository();
-            ICityRepository cir = new CityRepository();
-            IHotelRepository hr = new HotelRepository();
 
-            ICountryProvider cop = new CountryProvider();
-            ICityProvider cip = new CityProvider();
-            IHotelProvider hp = new HotelProvider();
-
-            foreach (var item in cip.GetCities())
+            for (int i = 10; i < 1000; i++)
             {
-                Console.Write(item.Id + " | ");
-                Console.Write(item.Name + " | ");
-                Console.Write(item.Priority + " | ");
-                Console.Write(item.DateCreate + " | ");
-                Console.WriteLine();
+                cor.AddCountry(new Country { DateCreate= DateTime.Now, Name = i.ToString(), Priority = 1 });
             }
-            
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
+
+            //ICityRepository cir = new CityRepository();
+            //IHotelRepository hr = new HotelRepository();
+
+            //ICountryProvider cop = new CountryProvider();
+            //ICityProvider cip = new CityProvider();
+            //IHotelProvider hp = new HotelProvider();
+
+            //foreach (var item in cip.GetCities())
+            //{
+            //    Console.Write(item.Id + " | ");
+            //    Console.Write(item.Name + " | ");
+            //    Console.Write(item.Priority + " | ");
+            //    Console.Write(item.DateCreate + " | ");
+            //    Console.WriteLine();
+            //}
+            Console.WriteLine("k");
             //hp.CreateHotel(new HotelCreateViewModel { Name = "Marlen", Priority = 5, CityId = 1 });
             //hr.AddHotel(new Hotel { Name = "Mir", CityId = 1, Priority = 15, DateCreate = DateTime.Now });
 
-            foreach (var item in hr.GetHotels())
-            {
-                Console.Write(item.Id + " | ");
-                Console.Write(item.Name + " | ");
-                Console.Write(item.Priority + " | ");
-                Console.Write(item.DateCreate + " | ");
-                Console.Write(item.CityId + " | ");
-                Console.Write(item.City.Name + " | ");
-                Console.WriteLine();
-            }
+            //foreach (var item in hr.GetHotels())
+            //{
+            //    Console.Write(item.Id + " | ");
+            //    Console.Write(item.Name + " | ");
+            //    Console.Write(item.Priority + " | ");
+            //    Console.Write(item.DateCreate + " | ");
+            //    Console.Write(item.CityId + " | ");
+            //    Console.Write(item.City.Name + " | ");
+            //    Console.WriteLine();
+            //}
 
             //foreach (var item in cor.GetCountries())
             //{

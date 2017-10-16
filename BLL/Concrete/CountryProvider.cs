@@ -54,16 +54,16 @@ namespace BLL.Concrete
             return country;
         }
 
-        public CountryItemViewModel GetCountriesByPage(int page)
+        public CountryItemViewModel GetCountriesByPage(int page, int pages)
         {
-            int pageSize = 10;
             int pageNo = page - 1;
             CountryItemViewModel model = new CountryItemViewModel();
+            model.Pages = pages;
             model.Countries = repository
                 .GetCountries()
                 .OrderByDescending(c => c.Priority)
-                .Skip(pageNo * pageSize)
-                .Take(pageSize)
+                .Skip(pageNo * pages)
+                .Take(pages)
                 .Select(c => new CountryViewModel
                 {
                     Id = c.Id,
@@ -71,7 +71,7 @@ namespace BLL.Concrete
                     Priority = c.Priority,
                     DateCreate = c.DateCreate
                 }).ToList();
-            model.TotalPages = (int)Math.Ceiling((double)repository.TotalCountries() / pageSize);
+            model.TotalPages = (int)Math.Ceiling((double)repository.TotalCountries() / pages);
             model.CurrentPage = page;
 
             return model;

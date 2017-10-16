@@ -22,4 +22,13 @@ namespace BLL.Models
         [Display(Name = "Country Id")]
         public int CountryId { get; set; }
     }
+
+    public class CityItemViewModel
+    {
+        public List<CityViewModel> Cities { get; set; }
+        public int TotalPages { get; set; }
+        [Range(1, short.MaxValue)]
+        public int Pages { get; set; }
+        public int CurrentPage { get; set; }
+    }
 }

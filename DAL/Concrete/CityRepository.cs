@@ -56,5 +56,10 @@ namespace DAL.Concrete
             _ctx.SaveChanges();
             return updatedCity;
         }
+
+        public int TotalCities()
+        {
+            return this.GetCities().Count;
+        }
     }
 }

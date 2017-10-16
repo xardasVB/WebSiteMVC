@@ -13,5 +13,6 @@ namespace DAL.Abstract
         Hotel RemoveHotel(int id);
         Hotel UpdateHotel(Hotel updatedHotel);
         List<Hotel> GetHotels();
+        int TotalHotels();
     }
 }

@@ -288,3 +288,7 @@ D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\DAL.pdb
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\obj\Debug\WebSiteMVC.csprojResolveAssemblyReference.cache
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\obj\Debug\WebSiteMVC.dll
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\obj\Debug\WebSiteMVC.pdb
+C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\Autofac.dll
+C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\Autofac.Integration.Mvc.dll
+C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\Autofac.xml
+C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\Autofac.Integration.Mvc.xml

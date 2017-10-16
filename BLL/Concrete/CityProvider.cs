@@ -56,25 +56,28 @@ namespace BLL.Concrete
             return city;
         }
 
-        public List<CityViewModel> GetCitiesByPage(int page)
+        public CityItemViewModel GetCitiesByPage(int page, int pages)
         {
-            int pageSize = 10;
             int pageNo = page - 1;
-            return repository
+            CityItemViewModel model = new CityItemViewModel();
+            model.Pages = pages;
+            model.Cities = repository
                 .GetCities()
-                .OrderBy(c => c.Id)
-                .Skip(pageNo * pageSize)
-                .Take(pageSize)
+                .OrderByDescending(c => c.Priority)
+                .Skip(pageNo * pages)
+                .Take(pages)
                 .Select(c => new CityViewModel
                 {
                     Id = c.Id,
                     Name = c.Name,
                     Priority = c.Priority,
                     DateCreate = c.DateCreate,
-                    Country = c.Country.Name,
-                    CountryId = c.CountryId
-                })
-                .ToList();
+                    Country = c.Country.Name
+                }).ToList();
+            model.TotalPages = (int)Math.Ceiling((double)repository.TotalCities() / pages);
+            model.CurrentPage = page;
+
+            return model;
         }
 
         public List<CityViewModel> GetCities()

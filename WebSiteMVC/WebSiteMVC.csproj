@@ -190,11 +190,12 @@
     <Content Include="Areas\Admin\Scripts\morris\morris.js" />
     <Content Include="Areas\Admin\Scripts\morris\raphael-2.1.0.min.js" />
     <Content Include="Areas\Admin\Scripts\myScript.js" />
+    <Content Include="Areas\Admin\Views\Content\bootstrap.css" />
+    <Content Include="Areas\Admin\Views\Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Areas\Admin\Views\Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -227,6 +228,8 @@
     <Content Include="Areas\Admin\Views\Hotel\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Hotel\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Country\_Countries.cshtml" />
+    <Content Include="Areas\Admin\Views\City\_Cities.cshtml" />
+    <Content Include="Areas\Admin\Views\Hotel\_Hotels.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

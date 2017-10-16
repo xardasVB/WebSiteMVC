@@ -13,5 +13,6 @@ namespace DAL.Abstract
         City RemoveCity(int id);
         City UpdateCity(City updatedCity);
         List<City> GetCities();
+        int TotalCities();
     }
 }

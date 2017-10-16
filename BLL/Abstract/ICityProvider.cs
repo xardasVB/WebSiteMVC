@@ -9,7 +9,7 @@ namespace BLL.Abstract
 {
     public interface ICityProvider
     {
-        List<CityViewModel> GetCitiesByPage(int page);
+        CityItemViewModel GetCitiesByPage(int page, int pages);
         List<CityViewModel> GetCities();
         CityViewModel GetCityById(int id);
         CityViewModel DeleteCity(int id);

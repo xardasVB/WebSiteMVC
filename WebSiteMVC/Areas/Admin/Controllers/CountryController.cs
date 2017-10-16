@@ -26,10 +26,9 @@ namespace WebSiteMVC.Areas.Admin.Controllers
         //}
 
         // GET: Country
-        public ActionResult Index(int page = 1)
+        public ActionResult Index(int page = 1, int pages = 10)
         {
-            var model = provider.GetCountriesByPage(page);
-            return View(model);
+            return View(provider.GetCountriesByPage(page, pages));
         }
 
         public ActionResult Create()
@@ -40,20 +39,24 @@ namespace WebSiteMVC.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Create(CountryCreateViewModel model)
         {
-            List<string> countryNames = provider
-                .GetCountries()
-                .Select(c => c.Name)
-                .ToList();
-
-            if (countryNames.Contains(model.Name))
-                ModelState.AddModelError("", "This country already exists");
-
-            if (!ModelState.IsValid)
+            //List<string> countryNames = provider
+            //    .GetCountries()
+            //    .Select(c => c.Name)
+            //    .ToList();
+            //
+            //if (countryNames.Contains(model.Name))
+            //    ModelState.AddModelError("", "This country already exists");
+            //
+            //if (!ModelState.IsValid)
+            //{
+            //    ModelState.AddModelError("", "Fields are incorrect");
+            //    return View(model);
+            //}
+            //provider.CreateCountry(model);
+            for (int i = 10; i < 1000; i++)
             {
-                ModelState.AddModelError("", "Fields are incorrect");
-                return View(model);
+                provider.CreateCountry(new CountryCreateViewModel { Name = i.ToString(), Priority = 1 });
             }
-            provider.CreateCountry(model);
             return RedirectToAction("Index");
         }
 
