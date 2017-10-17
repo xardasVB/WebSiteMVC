@@ -14,8 +14,11 @@
 
 <h2>Countries</h2>
 
-@Html.Partial("_ItemsPerPage", Model)
-@Html.Partial("_Search", Model.Search)
+@using (Html.BeginForm())
+{
+    @Html.Partial("_ItemsPerPage", Model)
+    @Html.Partial("_Search", Model.Search)
+}
 
 <p>
     @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-info" })

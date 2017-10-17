@@ -51,17 +51,25 @@
     <Compile Include="Abstract\ICountryRepository.cs" />
     <Compile Include="Abstract\IEFContext.cs" />
     <Compile Include="Abstract\IHotelRepository.cs" />
+    <Compile Include="Abstract\IUserRepository.cs" />
     <Compile Include="Concrete\CityRepository.cs" />
     <Compile Include="Concrete\CountryRepository.cs" />
     <Compile Include="Concrete\HotelRepository.cs" />
+    <Compile Include="Concrete\UserRepository.cs" />
     <Compile Include="DBInitializer.cs" />
     <Compile Include="EFContext.cs" />
     <Compile Include="Entity\City.cs" />
     <Compile Include="Entity\Country.cs" />
     <Compile Include="Entity\Hotel.cs" />
+    <Compile Include="Entity\Role.cs" />
+    <Compile Include="Entity\User.cs" />
     <Compile Include="Migrations\201710111725195_Create Hotel DB.cs" />
     <Compile Include="Migrations\201710111725195_Create Hotel DB.Designer.cs">
       <DependentUpon>201710111725195_Create Hotel DB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710171625182_Create Users and Roles Tables.cs" />
+    <Compile Include="Migrations\201710171625182_Create Users and Roles Tables.Designer.cs">
+      <DependentUpon>201710171625182_Create Users and Roles Tables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,6 +83,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710111725195_Create Hotel DB.resx">
       <DependentUpon>201710111725195_Create Hotel DB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710171625182_Create Users and Roles Tables.resx">
+      <DependentUpon>201710171625182_Create Users and Roles Tables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,5 @@
-﻿using BLL.Models;
+﻿using BLL.Abstract;
+using BLL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,18 +17,17 @@ namespace WebSiteMVC.Controllers
 
     public class AccountController : Controller
     {
+        private readonly IUserProvider _userProvider;
         private static List<DBUser> _listUsers;
 
-        public AccountController()
+        public AccountController(IUserProvider userProvider)
         {
+            _userProvider = userProvider;
             _listUsers = new List<DBUser>
             {
-                new DBUser { Email="q@i.ua", Password="123456" },
-                new DBUser { Email="w@i.ua", Password="123456" },
-                new DBUser { Email="e@i.ua", Password="123456" },
-                new DBUser { Email="r@i.ua", Password="123456" },
-                new DBUser { Email="t@i.ua", Password="123456" },
-                new DBUser { Email="y@i.ua", Password="123456" }
+                new DBUser {Email = "q@i.ua", Password="123456" },
+                new DBUser {Email = "w@i.ua", Password="123456" },
+                new DBUser {Email = "e@i.ua", Password="123456" }
             };
         }
 
@@ -54,6 +54,28 @@ namespace WebSiteMVC.Controllers
                 }
                 else
                     ModelState.AddModelError("", "Invalid data");
+            }
+            return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var status = _userProvider.Register(model);
+                if (status == StatusAccountViewModel.Success)
+                    return RedirectToAction("Login");
+                else if (status == StatusAccountViewModel.Dublication)
+                {
+                    ModelState.AddModelError("", "This user already exists");
+                }
             }
             return View(model);
         }

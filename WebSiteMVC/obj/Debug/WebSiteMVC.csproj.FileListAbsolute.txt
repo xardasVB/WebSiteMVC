@@ -292,3 +292,4 @@ C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\Autofac.dll
 C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\Autofac.Integration.Mvc.dll
 C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\Autofac.xml
 C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\Autofac.Integration.Mvc.xml
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\SimpleCrypto.dll

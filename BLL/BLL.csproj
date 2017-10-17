@@ -34,6 +34,10 @@
       <HintPath>..\packages\Autofac.4.6.1\lib\net45\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SimpleCrypto, Version=26.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleCrypto.0.3.30.26\lib\SimpleCrypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -48,11 +52,13 @@
     <Compile Include="Abstract\ICityProvider.cs" />
     <Compile Include="Abstract\ICountryProvider.cs" />
     <Compile Include="Abstract\IHotelProvider.cs" />
+    <Compile Include="Abstract\IUserProvider.cs" />
     <Compile Include="Concrete\CityProvider.cs" />
     <Compile Include="Concrete\CountryProvider.cs" />
     <Compile Include="Concrete\DataModule.cs" />
     <Compile Include="Concrete\HotelProvider.cs" />
-    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Concrete\UserProvider.cs" />
+    <Compile Include="Models\AccountViewModel.cs" />
     <Compile Include="Models\CityCreateViewModel.cs" />
     <Compile Include="Models\CityEditViewModel.cs" />
     <Compile Include="Models\CityViewModel.cs" />

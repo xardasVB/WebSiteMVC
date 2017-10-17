@@ -14,6 +14,7 @@ namespace WebSiteMVC.Areas.Admin.Controllers
         }
 
         // GET: Admin/Home
+        [Authorize]
         public ActionResult Index()
         {
             return View();

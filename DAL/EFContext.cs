@@ -24,6 +24,11 @@ namespace DAL
         public DbSet<City> Cities { get; set; }
         public DbSet<Hotel> Hotels { get; set; }
 
+        #region User Security
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        #endregion
+
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {
             return base.Set<TEntity>();
