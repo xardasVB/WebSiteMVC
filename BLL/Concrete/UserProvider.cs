@@ -8,6 +8,7 @@ using BLL.Models;
 using DAL.Abstract;
 using DAL.Entity;
 using SimpleCrypto;
+using System.Web.Security;
 
 namespace BLL.Concrete
 {
@@ -20,18 +21,42 @@ namespace BLL.Concrete
             _userRepository = userRepository;
         }
 
-        public IEnumerable<RegisterViewModel> GetUsers()
+        public StatusAccountViewModel Login(LoginViewModel model)
         {
-            return _userRepository.GetAllUsers().Select(u => new RegisterViewModel
+            var user = _userRepository.GetUserByEmail(model.Email);
+
+            if (user != null)
             {
-                Email = u.Email,
-                Password = u.Password
-            });
+                var crypto = new PBKDF2();
+                var password = crypto.Compute(model.Password, user.PasswordSalt);
+
+                if (password == user.Password)
+                {
+                    FormsAuthentication
+                        .SetAuthCookie(model.Email, model.IsRemembered);
+                    return StatusAccountViewModel.Success;
+                }
+            }
+            return StatusAccountViewModel.Error;
+        }
+
+        public void Logout()
+        {
+            FormsAuthentication.SignOut();
+        }
+
+
+        public IEnumerable<string> UserRoles(string email)
+        {
+            return _userRepository
+                .GetUserByEmail(email)
+                .Roles
+                .Select(r => r.Name);
         }
 
         public StatusAccountViewModel Register(RegisterViewModel model)
         {
-            var userDub =_userRepository.GetUserByEmail(model.Email);
+            var userDub = _userRepository.GetUserByEmail(model.Email);
 
             if (userDub != null)
                 return StatusAccountViewModel.Dublication;

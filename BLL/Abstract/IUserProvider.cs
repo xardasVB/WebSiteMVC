@@ -10,5 +10,8 @@ namespace BLL.Abstract
     public interface IUserProvider
     {
         StatusAccountViewModel Register(RegisterViewModel model);
+        StatusAccountViewModel Login(LoginViewModel model);
+        IEnumerable<string> UserRoles(string email);
+        void Logout();
     }
 }

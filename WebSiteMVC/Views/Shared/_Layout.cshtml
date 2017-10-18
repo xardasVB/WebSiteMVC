@@ -34,7 +34,8 @@
                     }
                     else
                     {
-                        <li>@Html.ActionLink("Log in", "Login", "Account")</li>
+                        <li><a data-toggle="modal" data-target="#loginModal">Log in</a></li>
+                        @*<li>@Html.ActionLink("Log in", "Login", "Account")</li>*@
                         <li>@Html.ActionLink("Register", "Register", "Account")</li>
                     }
                 </ul>
@@ -48,6 +49,8 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
+
+    @Html.Partial("_LoginPopup");
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

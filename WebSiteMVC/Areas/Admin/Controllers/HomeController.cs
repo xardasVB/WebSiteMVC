@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace WebSiteMVC.Areas.Admin.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public HomeController()
@@ -14,7 +15,6 @@ namespace WebSiteMVC.Areas.Admin.Controllers
         }
 
         // GET: Admin/Home
-        [Authorize]
         public ActionResult Index()
         {
             return View();

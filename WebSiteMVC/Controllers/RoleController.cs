@@ -6,24 +6,24 @@ using System.Web.Mvc;
 
 namespace WebSiteMVC.Controllers
 {
-    public class HomeController : Controller
+    [Authorize]
+    public class RoleController : Controller
     {
+        // GET: Role
         public ActionResult Index()
         {
             return View();
         }
-
-        public ActionResult About()
+        
+        [Authorize(Roles = "Admin")]
+        public ActionResult Delete()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
         
-        public ActionResult Contact()
+        [Authorize(Roles = "Admin,User")]
+        public ActionResult Preview()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }
