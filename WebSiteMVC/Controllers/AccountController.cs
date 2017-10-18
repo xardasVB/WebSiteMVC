@@ -1,5 +1,6 @@
 ﻿using BLL.Abstract;
 using BLL.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,5 +65,34 @@ namespace WebSiteMVC.Controllers
             _userProvider.Logout();
             return RedirectToAction("Index", "Home");
         }
+
+        #region AJAX
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ContentResult LoginPopup(LoginViewModel model)
+        {
+            string json = "";
+            int result = 0;
+            string message = "";
+            if (ModelState.IsValid)
+            {
+                var status = _userProvider.Login(model);
+                if (status == StatusAccountViewModel.Success)
+                {
+                    result = 1;
+                    message = " Login successfuly";
+                }
+                else
+                    message = "Invalid data";
+            }
+            message = "Validation";
+            json = JsonConvert.SerializeObject(new
+            {
+                result = result,
+                message = message
+            });
+            return Content(json, "application/json");
+        }
+        #endregion
     }
 }
