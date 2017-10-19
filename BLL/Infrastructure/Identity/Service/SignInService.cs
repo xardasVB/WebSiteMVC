@@ -9,7 +9,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL.Infrostructure.Identity.Service
+namespace BLL.Infrastructure.Identity.Service
 {
     public class SignInService : SignInManager<AppUser, string>
     {

@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL.Infrostructure.Identity.Service
+namespace BLL.Infrastructure.Identity.Service
 {
     public class RoleService : RoleManager<AppRole>
     {

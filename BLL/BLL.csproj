@@ -103,10 +103,10 @@
     <Compile Include="Concrete\DataModule.cs" />
     <Compile Include="Concrete\HotelProvider.cs" />
     <Compile Include="Concrete\UserProvider.cs" />
-    <Compile Include="Infrostructure\Identity\Service\EmailService.cs" />
-    <Compile Include="Infrostructure\Identity\Service\RoleService.cs" />
-    <Compile Include="Infrostructure\Identity\Service\SignInService.cs" />
-    <Compile Include="Infrostructure\Identity\Service\UserService.cs" />
+    <Compile Include="Infrastructure\Identity\Service\EmailService.cs" />
+    <Compile Include="Infrastructure\Identity\Service\RoleService.cs" />
+    <Compile Include="Infrastructure\Identity\Service\SignInService.cs" />
+    <Compile Include="Infrastructure\Identity\Service\UserService.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
     <Compile Include="Models\CityCreateViewModel.cs" />
     <Compile Include="Models\CityEditViewModel.cs" />

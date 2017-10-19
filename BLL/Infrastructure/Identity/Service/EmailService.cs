@@ -6,7 +6,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL.Infrostructure.Identity.Service
+namespace BLL.Infrastructure.Identity.Service
 {
     public class EmailService : IIdentityMessageService
     {
