@@ -97,6 +97,7 @@
     <Compile Include="Entity\City.cs" />
     <Compile Include="Entity\Country.cs" />
     <Compile Include="Entity\Hotel.cs" />
+    <Compile Include="Entity\Identity\AppRole.cs" />
     <Compile Include="Entity\Identity\AppUser.cs" />
     <Compile Include="Entity\Role.cs" />
     <Compile Include="Entity\User.cs" />
