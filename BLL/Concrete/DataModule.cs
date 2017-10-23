@@ -46,7 +46,7 @@ namespace BLL.Concrete
             builder.RegisterType<HotelProvider>()
                 .As<IHotelProvider>().InstancePerRequest();
 
-            builder.RegisterType<UserProvider>()
+            builder.RegisterType<UserIdentityProvider>()
                 .As<IUserProvider>().InstancePerRequest();
 
             base.Load(builder);

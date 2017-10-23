@@ -17,6 +17,11 @@ namespace DAL
             Database.SetInitializer<EFContext>(null);
         }
 
+        public static EFContext Create()
+        {
+            return new EFContext();
+        }
+
         public EFContext(string connString) : base(connString)
         {
             Database.SetInitializer<EFContext>(new DBInitializer());

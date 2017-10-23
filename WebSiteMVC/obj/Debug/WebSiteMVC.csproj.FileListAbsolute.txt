@@ -187,6 +187,10 @@ C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\DAL.dll.config
 C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\EntityFramework.xml
 C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\EntityFramework.SqlServer.dll
 C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\Autofac.dll
+C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\Autofac.Integration.Mvc.dll
+C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\Autofac.xml
+C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\Autofac.Integration.Mvc.xml
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\ApplicationInsights.config
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\roslyn\csc.exe
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\roslyn\csc.exe.config
@@ -252,9 +256,21 @@ D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.AI.ServerTelemetryChannel
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.AI.Web.dll
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.AI.WindowsServer.dll
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.ApplicationInsights.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.AspNet.Identity.Owin.dll
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.Security.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.Security.Twitter.dll
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Web.Infrastructure.dll
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Newtonsoft.Json.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Owin.dll
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\System.Web.Helpers.dll
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\System.Web.Mvc.dll
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\System.Web.Optimization.dll
@@ -264,12 +280,25 @@ D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\System.Web.WebPages.dll
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\System.Web.WebPages.Razor.dll
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\WebGrease.dll
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\DAL.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\SimpleCrypto.dll
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\BLL.pdb
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Autofac.xml
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Autofac.Integration.Mvc.xml
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\EntityFramework.xml
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\EntityFramework.SqlServer.xml
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.AspNet.Identity.Owin.xml
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.xml
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.Security.xml
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\System.Web.Helpers.xml
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\System.Web.Mvc.xml
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\System.Web.Optimization.xml
@@ -285,11 +314,7 @@ D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.AI.ServerTelemetryChannel
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.AI.WindowsServer.xml
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.AI.Web.xml
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\DAL.pdb
+D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\obj\Debug\WebSiteMVC.csprojResolveAssemblyReference.cache
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\obj\Debug\WebSiteMVC.dll
 D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\obj\Debug\WebSiteMVC.pdb
-C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\Autofac.dll
-C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\Autofac.Integration.Mvc.dll
-C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\Autofac.xml
-C:\Users\Vitaliy\Desktop\Projects\WebSiteMVC\WebSiteMVC\bin\Autofac.Integration.Mvc.xml
-D:\Besarab Vitaliy\WebSiteMVC\WebSiteMVC\bin\SimpleCrypto.dll

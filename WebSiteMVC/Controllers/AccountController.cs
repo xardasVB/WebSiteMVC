@@ -11,42 +11,17 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using System.Threading.Tasks;
 
 namespace WebSiteMVC.Controllers
 {
     public class AccountController : Controller
     {
-        private SignInService _signInManager;
-        private UserService _userManager;
         private readonly IUserProvider _userProvider;
 
         public AccountController(IUserProvider userProvider)
         {
             _userProvider = userProvider;
-        }
-
-        public SignInService SignInManager
-        {
-            get
-            {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<SignInService>();
-            }
-            private set
-            {
-                _signInManager = value;
-            }
-        }
-
-        public UserService UserManager
-        {
-            get
-            {
-                return _userManager ?? HttpContext.GetOwinContext().Get<UserService>();
-            }
-            private set
-            {
-                _userManager = value;
-            }
         }
 
         [HttpGet]
