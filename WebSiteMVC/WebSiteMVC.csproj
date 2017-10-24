@@ -19,7 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44354</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -244,6 +244,7 @@
     <Content Include="Areas\Admin\Views\Content\bootstrap.css" />
     <Content Include="Areas\Admin\Views\Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\mystyles.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\Admin\Views\Content\Site.css" />
@@ -315,6 +316,7 @@
     <Content Include="Views\Role\Delete.cshtml" />
     <Content Include="Views\Role\Preview.cshtml" />
     <Content Include="Views\Shared\_LoginPopup.cshtml" />
+    <Content Include="Views\Shared\_RegisterPopup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -361,7 +363,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>64671</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:64671/</IISUrl>
+          <IISUrl>https://localhost:44354/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -27,7 +27,8 @@ namespace WebSiteMVC.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            return View();
+            LoginViewModel model = new LoginViewModel();
+            return View(model);
         }
 
         [HttpPost]
@@ -76,9 +77,7 @@ namespace WebSiteMVC.Controllers
         [ValidateAntiForgeryToken]
         public ContentResult LoginPopup(LoginViewModel model)
         {
-            string json = "";
-            int result = 0;
-            string message = "";
+            string json = ""; int result = 0; string message = "";
             if (ModelState.IsValid)
             {
                 var status = _userProvider.Login(model);
@@ -86,6 +85,31 @@ namespace WebSiteMVC.Controllers
                 {
                     result = 1;
                     message = " Login successfuly";
+                }
+                else
+                    message = "Invalid data";
+            }
+            message = "Validation";
+            json = JsonConvert.SerializeObject(new
+            {
+                result = result,
+                message = message
+            });
+            return Content(json, "application/json");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ContentResult RegisterPopup(RegisterViewModel model)
+        {
+            string json = ""; int result = 0; string message = "";
+            if (ModelState.IsValid)
+            {
+                var status = _userProvider.Register(model);
+                if (status == StatusAccountViewModel.Success)
+                {
+                    result = 1;
+                    message = " Registeres successfuly";
                 }
                 else
                     message = "Invalid data";

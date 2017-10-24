@@ -43,9 +43,9 @@ namespace BLL.Concrete
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "124769014878488",
+               appSecret: "0b46a857e3df19b660d4a22f958b040a");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

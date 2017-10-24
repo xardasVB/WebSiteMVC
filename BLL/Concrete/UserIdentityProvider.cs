@@ -13,6 +13,8 @@ using BLL.Infrastructure.Identity.Service;
 using Microsoft.AspNet.Identity.Owin;
 using System.Web;
 using DAL.Entity.Identity;
+using Microsoft.Owin.Security;
+using Microsoft.AspNet.Identity;
 
 namespace BLL.Concrete
 {
@@ -21,7 +23,6 @@ namespace BLL.Concrete
         private readonly IUserRepository _userRepository;
         private SignInService _signInManager;
         private UserService _userManager;
-        private RoleService _roleManager;
 
         public UserIdentityProvider(IUserRepository userRepository)
         {
@@ -52,15 +53,11 @@ namespace BLL.Concrete
             }
         }
 
-        public RoleService RoleManager
+        private IAuthenticationManager AuthenticationManager
         {
             get
             {
-                return _roleManager ?? HttpContext.Current.GetOwinContext().Get<RoleService>();
-            }
-            private set
-            {
-                _roleManager = value;
+                return HttpContext.Current.GetOwinContext().Authentication;
             }
         }
 
@@ -77,17 +74,15 @@ namespace BLL.Concrete
             {
                 case SignInStatus.Success:
                     return StatusAccountViewModel.Success;
-
             }
             return StatusAccountViewModel.Error;
         }
 
         public void Logout()
         {
-            FormsAuthentication.SignOut();
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
-
-
+        
         public IEnumerable<string> UserRoles(string email)
         {
             return _userRepository
@@ -103,7 +98,7 @@ namespace BLL.Concrete
                 UserName = model.Email,
                 Email = model.Email
             };
-            var result = UserManager.CreateAsync(user, model.Password).Result;
+            var result = UserManager.Create(user, model.Password);
 
             if (result.Succeeded)
                 return StatusAccountViewModel.Success;

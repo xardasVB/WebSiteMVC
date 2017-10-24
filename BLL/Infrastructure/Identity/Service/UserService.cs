@@ -14,7 +14,10 @@ namespace BLL.Infrastructure.Identity.Service
 {
     public class UserService : UserManager<AppUser>
     {
-        public UserService(IUserStore<AppUser> store) : base(store) { }
+        public UserService(IUserStore<AppUser> store) : base(store)
+        {
+        }
+
         public static UserService Create(IdentityFactoryOptions<UserService> options,
             IOwinContext context)
         {
