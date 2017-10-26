@@ -18,7 +18,7 @@ using Microsoft.AspNet.Identity;
 
 namespace BLL.Concrete
 {
-    public class UserIdentityProvider: IUserProvider
+    public class UserIdentityProvider : IUserProvider
     {
         private readonly IUserRepository _userRepository;
         private SignInService _signInManager;
@@ -82,7 +82,7 @@ namespace BLL.Concrete
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
-        
+
         public IEnumerable<string> UserRoles(string email)
         {
             return _userRepository
@@ -103,6 +103,49 @@ namespace BLL.Concrete
             if (result.Succeeded)
                 return StatusAccountViewModel.Success;
 
+            return StatusAccountViewModel.Error;
+        }
+
+        public IList<string> UserFactors()
+        {
+            var userId = SignInManager.GetVerifiedUserId();
+            if (userId == null)
+            {
+                return null;
+            }
+            var userFactors = UserManager.GetValidTwoFactorProviders(userId);
+            return userFactors;
+        }
+
+        public bool SendTwoFactorCode(string provider)
+        {
+            return SignInManager.SendTwoFactorCode(provider);
+        }
+
+        public ExternalLoginInfo GetExternalLoginInfo()
+        {
+            return AuthenticationManager.GetExternalLoginInfo();
+        }
+
+        public SignInStatus ExternalSignIn(ExternalLoginInfo loginInfo, bool isPersistent)
+        {
+            return SignInManager.ExternalSignIn(loginInfo, isPersistent: false);
+        }
+
+        public StatusAccountViewModel CreateLogin(string email)
+        {
+            var info = AuthenticationManager.GetExternalLoginInfo();
+            var user = new AppUser { UserName = email, Email = email };
+            var result = UserManager.Create(user);
+            if (result.Succeeded)
+            {
+                result = UserManager.AddLogin(user.Id, info.Login);
+                if (result.Succeeded)
+                {
+                    SignInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
+                    return StatusAccountViewModel.Success;
+                }
+            }
             return StatusAccountViewModel.Error;
         }
     }

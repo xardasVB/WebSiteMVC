@@ -9,6 +9,7 @@ using DAL.Abstract;
 using DAL.Entity;
 using SimpleCrypto;
 using System.Web.Security;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace BLL.Concrete
 {
@@ -70,6 +71,31 @@ namespace BLL.Concrete
             _userRepository.SaveChanges();
 
             return StatusAccountViewModel.Success;
+        }
+
+        public IList<string> UserFactors()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool SendTwoFactorCode(string provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ExternalLoginInfo GetExternalLoginInfo()
+        {
+            throw new NotImplementedException();
+        }
+
+        public SignInStatus ExternalSignIn(ExternalLoginInfo loginInfo, bool isPersistent)
+        {
+            throw new NotImplementedException();
+        }
+
+        public StatusAccountViewModel CreateLogin(string email)
+        {
+            throw new NotImplementedException();
         }
     }
 }

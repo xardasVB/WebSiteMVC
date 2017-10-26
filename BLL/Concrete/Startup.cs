@@ -6,6 +6,7 @@ using BLL.Infrastructure.Identity.Service;
 using Microsoft.AspNet.Identity;
 using DAL;
 using DAL.Abstract;
+using Microsoft.Owin.Security.Facebook;
 
 [assembly: OwinStartup(typeof(BLL.Concrete.Startup))]
 
@@ -43,9 +44,17 @@ namespace BLL.Concrete
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            app.UseFacebookAuthentication(
-               appId: "124769014878488",
-               appSecret: "0b46a857e3df19b660d4a22f958b040a");
+            var facebookOptions = new FacebookAuthenticationOptions
+            {
+                AppId = "124769014878488",
+                AppSecret = "0b46a857e3df19b660d4a22f958b040a"
+            };
+
+            facebookOptions.Scope.Add("email");
+            facebookOptions.Fields.Add("name");
+            facebookOptions.Fields.Add("email");
+
+            app.UseFacebookAuthentication(facebookOptions);
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

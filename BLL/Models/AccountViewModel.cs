@@ -32,7 +32,7 @@ namespace BLL.Models
         [Required, DataType(DataType.Password), StringLength(100, MinimumLength = 6)]
         public string Password { get; set; }
         [Required, DataType(DataType.Password)]
-        [Compare("Password", ErrorMessage = "Password is not the same")]
+        [Compare("Password", ErrorMessage = "Password is not the same"), Display(Name = "Confirm password")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -41,5 +41,17 @@ namespace BLL.Models
         Success = 0,
         Dublication = 1,
         Error = 2
+    }
+
+    public class ExternalLoginConfirmationViewModel
+    {
+        [Required]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+    }
+
+    public class ExternalLoginListViewModel
+    {
+        public string ReturnUrl { get; set; }
     }
 }

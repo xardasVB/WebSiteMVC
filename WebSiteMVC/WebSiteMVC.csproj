@@ -218,6 +218,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\PagingHelper.cs" />
+    <Compile Include="Models\AccountViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -317,11 +318,11 @@
     <Content Include="Views\Role\Preview.cshtml" />
     <Content Include="Views\Shared\_LoginPopup.cshtml" />
     <Content Include="Views\Shared\_RegisterPopup.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
